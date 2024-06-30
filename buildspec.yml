@@ -41,7 +41,7 @@ phases:
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/c3x5e8o7
       - docker push public.ecr.aws/c3x5e8o7/eks-lab-5:latest || (echo "docker push failed" && exit 1)
       - echo Updating kubeconfig...
-      - aws eks update-kubeconfig --region us-east-1 --name kubernetes-lab-03
+      - aws eks update-kubeconfig --region us-east-2 --name kubernetes-lab-03
       - kubectl config current-context
       - kubectl get nodes
       - echo Deploying to Kubernetes cluster...
