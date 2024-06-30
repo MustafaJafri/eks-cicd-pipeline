@@ -45,7 +45,7 @@ phases:
       - clair-scanner --ip 54.209.191.96 -r clair_report.json -l clair_log.json --threshold="Critical" 587027614473.dkr.ecr.us-east-1.amazonaws.com/cicd-integrate-clair_and_ecr:latest || (echo "clair-scanner failed" && exit 1)
       - echo Clair scanning completed
       - echo Updating kubeconfig...
-      - aws eks update-kubeconfig --region us-east-1 --name eks
+      - aws eks update-kubeconfig --region us-east-2 --name eks
       - kubectl config current-context
       - kubectl get nodes
       - echo Deploying to Kubernetes cluster...
